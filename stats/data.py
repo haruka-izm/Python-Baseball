@@ -33,4 +33,4 @@ games = games.fillna(' ')
 # to slightly reduce the memory use
 games.loc[:, 'type'] = pd.Categorical(games.loc[:, 'type'])
 
-print(games.head())
+print(games.head(5))
