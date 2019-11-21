@@ -8,7 +8,7 @@ game_frames = []
 for game_file in game_files:
     # names: column names
     game_frame = pd.read_csv(game_file, names=['type', 'multi2',
-    'multi3', 'multi4', 'multi5', 'multi6', 'event'])
+                 'multi3', 'multi4', 'multi5', 'multi6', 'event'])
     game_frames.append(game_frame)
 
 games = pd.concat(game_frames)
@@ -27,7 +27,7 @@ identifiers.columns = ['game_id', 'year']
 # append the columns of the identifiers DataFrame to the game DataFrame
 games = pd.concat([games, identifiers], axis=1, sort=False)
 
-# fill in all Nan values in the gara with ' '
+# fill in all Nan values in the games DataFrame with ' '
 games = games.fillna(' ')
 
 # to slightly reduce the memory use
