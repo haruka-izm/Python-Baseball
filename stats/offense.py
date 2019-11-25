@@ -13,7 +13,7 @@ plays.columns = ['type', 'inning', 'team', 'player', 'count', 'pitches', 'event'
 # just need hits, singles, doubles, triples, and home runs
 # select the rows where the event column's value starts with S, D, T, HR
 # only return the inning and event columns
-hits = plays.loc[plays['event'].str.contains('^(?:S(?!B)|D|T|HR'), ['inning', 'event']]
+hits = plays.loc[plays['event'].str.contains('^(?:S(?!B)|D|T|HR)'), ['inning', 'event']]
 
 # convert column type: str to numeric
 hits.loc[:, 'inning'] = pd.to_numeric(hits.loc[:, 'inning'])
